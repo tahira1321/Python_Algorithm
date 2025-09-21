@@ -20,29 +20,43 @@ step0:動作を考える
 '''
 
 # step1:入力された数字を取得
-n = int(input("1から10の数字を入力："))
+n = int(input("数字を入力："))
 print(n)
 
-
-# step2:繰り返し入力処理をさせる
-for i in range(1, 3):
-  n = int(input("1から10の数字を入力："))
+'''
+# step2:繰り返し数字の入力をさせる
+while True:
+  n = int(input("数字を入力："))
   print(n)
+'''
+
+# step3:条件分岐を考える
+renzoku_n = 1
+ima_n = ""
+while True:
+  n = int(input("数字を入力："))
+  if ima_n == n:
+      renzoku_n += 1
+      print("{}回連続".format(renzoku_n))
+      if ima_n == 10:
+          print("perfect")
+  else:
+      print("連続なし")
 
 
-# step3:入力された数字を繰り返し表示する
-check_n = 0
-i = 1
-while i <= 10:
+
+
+
+
+'''
+# step2:入力された数字を繰り返し表示する
+while True:
   n = int(input("1から10の数字を入力："))
   current_n = n
   if check_n != n:
     print("連続なし")
     break
-
-
-
-
+'''
 
 '''
 # step2:入力された数字が前回と同じか判定する
@@ -63,3 +77,18 @@ else:
 
 
 '''
+
+
+x = ""
+v = 1
+for i in range(10):
+    j = int(input("数字を入力して下さい"))
+    if j == x:
+        v = v + 1
+        print("{}回連続".format(v))
+        if v == 10:
+            print("perfect!!")
+    else:
+        v = 1
+        print("連続なし")
+    x = j
