@@ -71,7 +71,7 @@ a = int(input("一つ目の整数値を入力："))
 b = int(input("二つ目の整数値を入力："))
 # a について素数を判定
 a_half = a // 2
-for i in range(2, half+1):
+for i in range(2, a_half+1):
   if a % i == 0:
     print(f"{a}は素数ではありません")
     break
@@ -81,7 +81,7 @@ else:
 
 # b について素数を判定
 b_half = b // 2
-for i in range(2, half+1):
+for i in range(2, b_half+1):
   if b % i == 0:
     print(f"{b}は素数ではありません")
     break
@@ -102,53 +102,6 @@ a=9, b=7のとき
   7は素数です
   False
 
-これで意図した結果になったように思うが...
-判定したい数字が２と３の時は「素数ではありません」と表示される
-  2は素数ではありません
-  3は素数ではありません
-
-
-'''
-# step3:2と3を素数判定させる
-a = int(input("一つ目の整数値を入力："))
-b = int(input("二つ目の整数値を入力："))
-# a について素数を判定
-a_half = a // 2
-for i in range(2, half+1):
-  if a == 2 or a == 3:        # 2と3だけ例外にした
-    print(f"{a}は素数です")
-    a = True
-    break                     # ここで break を入れないと elif で aにTrueを代入した状態で次に渡されてしまう
-  elif a % i == 0:
-    print(f"{a}は素数ではありません")
-    break
-else:
-  print(f"{a}は素数です")
-  a = True
-
-# b について素数を判定
-b_half = b // 2
-for i in range(2, half+1):
-  if b == 2 or b == 3:
-    print(f"{b}は素数です")
-    b = True
-    break
-  elif b % i == 0:
-    print(f"{b}は素数ではありません")
-    break
-else:
-  print(f"{b}は素数です")
-  b = True
-
-if a == True and b == True:
-  print("True")
-else:
-  print("False")
-'''
-実行結果
-a=2, b=3のとき
-  2は素数です
-  3は素数です
-  True
+これで意図した結果になったように思う
 
 '''
